@@ -1,14 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using WorldCupDomain.InModels;
-using WorldCupLogicInterface.Interfaces;
-using FromBodyAttribute = Microsoft.AspNetCore.Mvc.FromBodyAttribute;
-using HttpDeleteAttribute = Microsoft.AspNetCore.Mvc.HttpDeleteAttribute;
-using HttpGetAttribute = Microsoft.AspNetCore.Mvc.HttpGetAttribute;
-using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
-using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using WorldCupOrganization.Domain.Entities;
+using WorldCupOrganization.Interfaces.Contracts;
+using WorldCupOrganization.WebApi.Models.InModels;
+using WorldCupOrganization.WebApi.Models.OutModels;
 
-namespace WorldCupApi.Controllers
+namespace WorldCupOrganization.WebApi.Controllers
 {
     [Route("api/players")]
     [ApiController]
@@ -28,13 +25,15 @@ namespace WorldCupApi.Controllers
         {
             try
             {
-                var player = playerLogic.GetPlayer(new PlayerInModel()
+                PlayerInModel newPlayer = new PlayerInModel()
                 {
                     Name = name,
                     LastName = lastName,
                     Country = country
-                });
-                return new OkObjectResult(player);
+                };
+                Player player = playerLogic.GetPlayer(newPlayer.ToEntity());
+
+                return new OkObjectResult(new PlayerOutModel(player));
             } catch ( Exception ex )
             {
                 return BadRequest();
@@ -55,8 +54,9 @@ namespace WorldCupApi.Controllers
         {
             try
             {
-                playerLogic.AddPlayer(player);
-                return Ok();
+                var result = playerLogic.AddPlayer(player.ToEntity());
+
+                return new OkObjectResult(new PlayerOutModel(result));
             } catch (Exception ex)
             {
                 return NotFound();
@@ -69,7 +69,7 @@ namespace WorldCupApi.Controllers
             try
             {
                 playerLogic.DeletePlayer(lastName);
-                return Ok();
+                return Ok("All good");
             }
             catch (Exception ex)
             {

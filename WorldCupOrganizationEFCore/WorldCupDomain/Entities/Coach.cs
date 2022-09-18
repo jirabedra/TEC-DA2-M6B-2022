@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorldCupDomain.InModels
+namespace WorldCupOrganization.Domain.Entities
 {
     public class Coach
     {

@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WorldCupDomain.InModels;
-using WorldCupDomain.OutModels;
-using WorldCupLogicInterface.Interfaces;
+using WorldCupOrganization.Interfaces.Contracts;
+using WorldCupOrganization.Domain.Entities;
 
-namespace WorldCupLogic.Logics
+namespace WorldCupOrganization.Logics
 {
     public class TidyPlayerLogic : IPlayerLogic
     {
-        public void AddPlayer(PlayerInModel somePlayer)
+        public Player AddPlayer(Player somePlayer)
         {
             Console.WriteLine("Added player named " + somePlayer.Name
                 + " with last name " + somePlayer.LastName 
                 + "and is from " + somePlayer.Country);
+            return somePlayer;
         }
-        public PlayerOutModel GetPlayer(PlayerInModel somePlayer)
+        public Player GetPlayer(Player somePlayer)
         {
             Console.WriteLine("Player named " + somePlayer.Name
                 + " with last name " + somePlayer.LastName
                 + "and is from " + somePlayer.Country);
-            return new PlayerOutModel()
+            return new Player()
             {
                 Name = somePlayer.Name,
                 LastName = somePlayer.LastName,

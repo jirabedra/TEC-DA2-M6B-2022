@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WorldCupDomain\WorldCupDomain.csproj" />
-    <ProjectReference Include="..\WorldCupLogicInterface\WorldCupLogicInterface.csproj" />
+    <ProjectReference Include="..\WorldCupDomain\WorldCupOrganization.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WorldCupDomain.InModels;
-using WorldCupLogicInterface.Interfaces;
-using FromBodyAttribute = Microsoft.AspNetCore.Mvc.FromBodyAttribute;
-using HttpPostAttribute = Microsoft.AspNetCore.Mvc.HttpPostAttribute;
-using RouteAttribute = Microsoft.AspNetCore.Mvc.RouteAttribute;
+using WorldCupOrganization.Domain.Entities;
+using WorldCupOrganization.Interfaces.Contracts;
+using WorldCupOrganization.WebApi.Models.InModels;
+using WorldCupOrganization.WebApi.Models.OutModels;
 
-namespace WorldCupApi.Controllers
+namespace WorldCupOrganization.WebApi.Controllers
 {
     [Route("api/coaches")]
     [ApiController]
@@ -20,10 +19,10 @@ namespace WorldCupApi.Controllers
 
    
         [HttpPost]
-        public IActionResult AddCoach([FromBody] Coach aCoach)
+        public IActionResult AddCoach([FromBody] CoachInModel aCoach)
         {
-                coachLogic.CreateCoach(aCoach);
-                return new OkObjectResult(aCoach);
+                Coach result = coachLogic.CreateCoach(aCoach.ToEntity());
+                return new OkObjectResult(new CoachOutModel(result));
         }
 
         

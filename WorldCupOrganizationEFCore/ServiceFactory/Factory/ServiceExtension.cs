@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WorldCupLogic.Logics;
-using WorldCupLogicInterface.Interfaces;
+using WorldCupOrganization.Interfaces.Contracts;
+using WorldCupOrganization.Logics;
 
-namespace ServiceFactory.Factory
+namespace WorldCupOrganization.ServiceFactory.Factory
 {
     public static class ServiceExtension
     {

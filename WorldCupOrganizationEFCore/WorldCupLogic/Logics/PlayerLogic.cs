@@ -1,9 +1,9 @@
 ﻿using System;
-using WorldCupDomain.InModels;
-using WorldCupDomain.OutModels;
-using WorldCupLogicInterface.Interfaces;
+using WorldCupOrganization.Interfaces.Contracts;
 
-namespace WorldCupLogic.Logics
+using WorldCupOrganization.Domain.Entities;
+
+namespace WorldCupOrganization.Logics
 {
     public class PlayerLogic : IPlayerLogic
     {
@@ -13,15 +13,16 @@ namespace WorldCupLogic.Logics
             Console.WriteLine("deleted player " + lastName);
         }
 
-        public void AddPlayer(PlayerInModel somePlayer)
+        public Player AddPlayer(Player somePlayer)
         {
             Console.WriteLine("added player " + somePlayer);
+            return somePlayer;
         }
 
-        public PlayerOutModel GetPlayer(PlayerInModel somePlayer)
+        public Player GetPlayer(Player somePlayer)
         {
             Console.WriteLine("fetching player " + somePlayer);
-            return new PlayerOutModel()
+            return new Player()
             {
                 Name = somePlayer.Name,
                 LastName = somePlayer.LastName,
