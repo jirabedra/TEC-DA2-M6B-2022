@@ -28,17 +28,17 @@ namespace Webapi.Tests.UnitTests
             CoachOutModel expectedCoach = new CoachOutModel(resultCoach);
             var aCoachLogicMock = new Mock<ICoachLogic>(MockBehavior.Strict);
             var controller = new CoachController(aCoachLogicMock.Object);
-            aCoachLogicMock.Setup(m => m.CreateCoach(It.IsAny<Coach>())).Returns(Coach resultCoach = new Coach()
-);
+            aCoachLogicMock.Setup(m => m.CreateCoach(It.IsAny<Coach>())).Returns(resultCoach);
 
             //Act
             var resultCall = controller.AddCoach(infoCoach);
 
+            //Assert
             aCoachLogicMock.VerifyAll();
             var result = resultCall as OkObjectResult;
             var resultObject = result.Value as CoachOutModel;
-            //Assert
-            Assert.AreEqual(expectedCoach, resultObject); //en realidad deberíamos redefinir el Equals
+
+            Assert.AreEqual(expectedCoach, resultObject);
         }
     }
 }
