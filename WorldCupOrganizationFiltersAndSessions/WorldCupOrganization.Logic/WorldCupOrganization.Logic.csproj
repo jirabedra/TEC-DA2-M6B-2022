@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorldCupOrganization.DataAccess.Interfaces\WorldCupOrganization.DataAccess.Interfaces.csproj" />
+    <ProjectReference Include="..\WorldCupOrganization.Logic.Interfaces\WorldCupOrganization.Logic.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
