@@ -11,6 +11,7 @@ using WorldCupOrganization.WebApi.Models.OutModels;
 namespace WorldCupOrganization.WebApi.Controllers
 {
     [Route("api/coaches")]
+    [WebApiExceptionFilter]
     [ApiController]
     public class CoachController : ControllerBase
     {
@@ -25,22 +26,11 @@ namespace WorldCupOrganization.WebApi.Controllers
         [HttpPost]
         public IActionResult AddCoach([FromBody] CoachInModel aCoach)
         {
-            try
-            {
-                var adminId = this.HttpContext.Items["adminId"];
-                Console.WriteLine(adminId);
+            var adminId = this.HttpContext.Items["adminId"];
+            
 
-                Coach result = coachLogic.CreateCoach(aCoach.ToEntity());
-                return new OkObjectResult(new CoachOutModel(result));
-            }
-            catch (InterruptedActionException iex)
-            {
-                return BadRequest(iex.Message);
-            }
-            catch (Exception iex)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, iex.Message);
-            }
+            Coach result = coachLogic.CreateCoach(aCoach.ToEntity());
+            return new OkObjectResult(new CoachOutModel(result));
         }
 
 

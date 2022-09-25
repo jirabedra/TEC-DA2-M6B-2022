@@ -18,7 +18,7 @@ namespace WorldCupOrganization.ServiceFactory.Factory
             services.AddScoped<ICoachRepository, CoachRepository>();
             services.AddScoped<ISessionRepository, SessionRepository>();
             services.AddScoped<ISessionLogic, SessionLogic>();
-            services.AddDbContext<DbContext, WorldCupOrganizationContext>(o => o.UseSqlServer(connectionString));
+            services.AddDbContext<DbContext, WorldCupOrganizationContext>(o => o.UseSqlServer(connectionString).UseLazyLoadingProxies());
         }
     }
 }

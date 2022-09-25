@@ -14,14 +14,14 @@ namespace WorldCupOrganization.Logic.Logics
 
         public SessionLogic(ISessionRepository aSessionRepository)
         {
-             sessionRepository =aSessionRepository;
+             sessionRepository = aSessionRepository;
         }
 
         public int GetAdminIdFromToken(Guid aToken)
         {
             try
             {
-                if (sessionRepository.Exist(TokenPredicate(aToken)))
+                if (!sessionRepository.Exist(TokenPredicate(aToken)))
                 {
                     throw new NotExistElementException("No existe el token");
                 }
@@ -63,7 +63,6 @@ namespace WorldCupOrganization.Logic.Logics
                 
                 if (sessionRepository.Exist(ExistAdmin(mail,password)))
                 {
-
                     aSession = sessionRepository.Get(RelatedTokenPredicate(mail));
                 }
                 else if (sessionRepository.Exist(RelatedTokenPredicate(mail)))

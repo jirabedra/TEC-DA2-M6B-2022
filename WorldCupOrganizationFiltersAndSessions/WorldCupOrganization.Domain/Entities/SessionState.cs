@@ -9,6 +9,6 @@ namespace WorldCupOrganization.Domain.Entities
         }
         public int Id { get; set; }
         public Guid Token { get; set; }
-        public Admin AnAdmin { get; set; }
+        public virtual Admin AnAdmin { get; set; }
     }
 }

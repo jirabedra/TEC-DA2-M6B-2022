@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using WorldCupOrganization.Logic.Interfaces.Contracts;
+using Microsoft.AspNetCore.Http;
 
 namespace WorldCupOrganization.WebApi.Filters
 {
@@ -54,7 +55,7 @@ namespace WorldCupOrganization.WebApi.Filters
             else
             {
                 int adminLoggedId = session.GetAdminIdFromToken(aToken);
-                aContext.ActionArguments.Add("adminId", adminLoggedId);
+                aContext.HttpContext.Items.Add("adminId", adminLoggedId);
             }
         }
 
