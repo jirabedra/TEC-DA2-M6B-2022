@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.29">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WorldCupOrganization.Logic.Interfaces\WorldCupOrganization.Logic.Interfaces.csproj" />
+    <ProjectReference Include="..\WorldCupOrganization.ServiceFactory\WorldCupOrganization.ServiceFactory.csproj" />
+  </ItemGroup>
+
+
+</Project>

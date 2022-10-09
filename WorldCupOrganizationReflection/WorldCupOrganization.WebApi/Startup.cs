@@ -1,17 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using ServiceFactory.Factory;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using WorldCupOrganization.ServiceFactory.Factory;
 
-namespace WorldCupOrganizationTDDApi
+namespace WorldCupOrganization.WebApi
 {
     public class Startup
     {
@@ -26,7 +20,7 @@ namespace WorldCupOrganizationTDDApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            ServiceExtension.AddServices(services, Configuration.GetConnectionString("ExampleDB"));
+            services.AddServices(Configuration.GetConnectionString("WorldCupOrganizationDB"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

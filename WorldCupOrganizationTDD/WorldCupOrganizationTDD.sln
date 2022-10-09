@@ -3,17 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldCupOrganizationTDDApi", "WorldCupOrganizationTDDApi\WorldCupOrganizationTDDApi.csproj", "{69259EE2-AFB0-4DA3-9E30-A9F83BF77627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldCupOrganizationTDDApi", "WorldCupOrganizationTDDApi\WorldCupOrganizationTDDApi.csproj", "{69259EE2-AFB0-4DA3-9E30-A9F83BF77627}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceFactory", "ServiceFactory\ServiceFactory.csproj", "{9B6EE1C6-869B-48CC-8CDD-21E682C74703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceFactory", "ServiceFactory\ServiceFactory.csproj", "{9B6EE1C6-869B-48CC-8CDD-21E682C74703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldCupLogic", "WorldCupLogic\WorldCupLogic.csproj", "{0FFD6C78-CC58-49D6-9F17-87E0E9DCC10C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldCupLogic", "WorldCupLogic\WorldCupLogic.csproj", "{0FFD6C78-CC58-49D6-9F17-87E0E9DCC10C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldCupLogicInterface", "WorldCupLogicInterface\WorldCupLogicInterface.csproj", "{29A9941D-7B83-4C78-8D75-AB310D3751C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldCupLogicInterface", "WorldCupLogicInterface\WorldCupLogicInterface.csproj", "{29A9941D-7B83-4C78-8D75-AB310D3751C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldCupDomain", "WorldCupDomain\WorldCupDomain.csproj", "{C6E49F51-5505-43F9-8918-A5823931886D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorldCupDomain", "WorldCupDomain\WorldCupDomain.csproj", "{C6E49F51-5505-43F9-8918-A5823931886D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Test", "WebApi.Test\WebApi.Test.csproj", "{A211A02E-217E-4029-BADA-EA62DAFCF953}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi.Test", "WebApi.Test\WebApi.Test.csproj", "{A211A02E-217E-4029-BADA-EA62DAFCF953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{C84D6F3E-4E0B-4426-AA59-5EAAD39E3429}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "Migrations\Migrations.csproj", "{2F429244-CEB3-4C16-AFAF-ED0D4F71F1E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorldCupLogic.Tests", "WorldCupLogic.Tests\WorldCupLogic.Tests.csproj", "{318CB72D-228D-4219-9B10-AC933FE9F654}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{A211A02E-217E-4029-BADA-EA62DAFCF953}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A211A02E-217E-4029-BADA-EA62DAFCF953}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A211A02E-217E-4029-BADA-EA62DAFCF953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C84D6F3E-4E0B-4426-AA59-5EAAD39E3429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84D6F3E-4E0B-4426-AA59-5EAAD39E3429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84D6F3E-4E0B-4426-AA59-5EAAD39E3429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84D6F3E-4E0B-4426-AA59-5EAAD39E3429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F429244-CEB3-4C16-AFAF-ED0D4F71F1E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F429244-CEB3-4C16-AFAF-ED0D4F71F1E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F429244-CEB3-4C16-AFAF-ED0D4F71F1E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F429244-CEB3-4C16-AFAF-ED0D4F71F1E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318CB72D-228D-4219-9B10-AC933FE9F654}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318CB72D-228D-4219-9B10-AC933FE9F654}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318CB72D-228D-4219-9B10-AC933FE9F654}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318CB72D-228D-4219-9B10-AC933FE9F654}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

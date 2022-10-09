@@ -16,13 +16,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
-    <ProjectReference Include="..\WorldCupLogicInterface\WorldCupLogicInterface.csproj" />
-    <ProjectReference Include="..\WorldCupLogic\WorldCupLogic.csproj" />
+    <ProjectReference Include="..\WorldCupDomain\WorldCupDomain.csproj" />
   </ItemGroup>
 
 </Project>
