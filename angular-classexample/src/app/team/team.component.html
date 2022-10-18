@@ -1,0 +1,12 @@
+<div>
+    <app-edit-team [selectedTeam]="selectedTeam"></app-edit-team>
+    <h2>My teams: </h2>
+    <ol class="teams">
+        <li *ngFor="let team of teams">
+            <button [class.selected]="team === selectedTeam" type="button" (click)="onSelect(team)">
+                <span class="badge">{{team.id}}</span>
+                <span class="name">{{team.name}}</span>
+            </button>
+        </li>
+    </ol>
+</div>

@@ -1,0 +1,18 @@
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    background-color: rgb(3, 195, 131);
+    color: white;
+    border-radius: 0 0 0 10px;
+
+}
+
+.close:hover {
+    background-color: rgb(195, 64, 3);
+}
+
+.close:active {
+    background-color: rgb(231, 179, 156);
+}
