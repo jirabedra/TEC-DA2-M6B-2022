@@ -22,6 +22,12 @@ namespace WorldCupOrganization.WebApi.Controllers
             coachLogic = someCoachLogic;
         }
 
+        [HttpGet]
+        public IActionResult GetAllCoaches()
+        {
+            return new OkObjectResult(coachLogic.GetAllCoaches());
+        }
+
         [AuthenticationFilter]
         [HttpPost]
         public IActionResult AddCoach([FromBody] CoachInModel aCoach)

@@ -21,7 +21,7 @@ namespace Webapi.Tests.test
             };
             var aCoachLogicMock = new Mock<ICoachLogic>(MockBehavior.Strict);
             var controller = new CoachController(aCoachLogicMock.Object);
-            aCoachLogicMock.Setup(m => m.CreateCoach(It.IsAny<Coach>())).Returns(expectedCoach);
+            //aCoachLogicMock.Setup(m => m.CreateCoach(It.IsAny<Coach>())).Returns(expectedCoach);
 
             //Act
             var resultCall = controller.AddCoach(expectedCoach);

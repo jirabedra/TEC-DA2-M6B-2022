@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WorldCupOrganization.DataAccess.Context;
 using WorldCupOrganization.ServiceFactory.Factory;
 
 namespace WorldCupOrganization.WebApi
@@ -21,6 +22,7 @@ namespace WorldCupOrganization.WebApi
         {
             services.AddControllers();
             services.AddServices(Configuration.GetConnectionString("WorldCupOrganizationDB"));
+            services.AddDbContext<WorldCupOrganizationContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

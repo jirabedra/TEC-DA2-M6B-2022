@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using WorldCupOrganization.DataAccess.Interfaces.Contracts;
 using WorldCupOrganization.DataAccess.Interfaces.Errors;
 using WorldCupOrganization.Domain.Entities;
@@ -14,6 +15,11 @@ namespace WorldCupOrganization.Logic.Logics
         public CoachLogic(ICoachRepository coachRepository)
         {
             this.coachRepository = coachRepository;
+        }
+
+        public List<Coach> GetAllCoaches()
+        {
+            return coachRepository.GetAllCoaches();
         }
 
         public Coach CreateCoach(Coach coach)
