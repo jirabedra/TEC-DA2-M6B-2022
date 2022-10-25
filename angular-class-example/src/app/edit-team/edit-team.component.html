@@ -1,0 +1,10 @@
+<div *ngIf="selectedTeam">
+    <h2>{{selectedTeam.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedTeam.id}}</div>
+    <div><span>name: </span>{{selectedTeam.name}}</div>
+    <div>
+        <label for="name">teams name: </label>
+        <input id="name" [(ngModel)]="selectedTeam.name" placeholder="name">
+    </div>
+    <p class="close" (click)="onClose()">Close</p>
+</div>

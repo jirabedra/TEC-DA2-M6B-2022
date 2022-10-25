@@ -1,0 +1,9 @@
+<div>
+    <button (click)="onClick()" class="customButton">
+        Click
+    </button>
+    <div *ngIf="receivedTeam">
+        <input id="name" [(ngModel)]="receivedTeam.name" placeholder="name">
+
+    </div>
+</div>

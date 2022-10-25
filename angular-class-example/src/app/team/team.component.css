@@ -1,0 +1,22 @@
+.badge {
+    margin-right: 10px;
+    border-radius: 100%;
+    padding: 5px;
+    background-color: rgb(3, 195, 131);
+}
+
+.teams {
+    margin: 10px;
+    background-color: burlywood;
+    overflow: auto;
+    height: 300px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, 186px);
+    border-radius: 20px;
+}
+
+.selected {
+    background-color: rgb(213, 79, 49) !important;
+    color: white;
+}
